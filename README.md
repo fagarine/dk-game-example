@@ -1,5 +1,7 @@
 ## 项目介绍
-该项目是为了引导用户快速使用当康系统的示例项目，[点此前往当康系统项目](https://github.com/fagarine/dangkang)
+该项目是为了引导用户快速使用当康系统的示例项目，当康系统项目链接：
+- [github链接](https://github.com/fagarine/dangkang)
+- [码云链接](https://gitee.com/fagarine/dangkang)
 
 ### 项目结构
 ```text
@@ -37,3 +39,7 @@ dk-game-example
 - 配置中心客户端
 - 进程内机器人，有限状态机
 - GM功能支持
+
+### 项目链接
+- [github链接](https://github.com/fagarine/dk-game-example)
+- [码云链接](https://gitee.com/fagarine/dk-game-example)
