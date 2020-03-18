@@ -1,0 +1,46 @@
+// 聊天实例项目protobuf消息描述文件，使用proto3语法
+syntax = "proto3";
+
+option java_package = "cn.laoshini.game.example.chat.pb";
+option java_outer_classname = "ChatGameMessages";
+
+// 获取一个可用的用户名
+message GetNameReq {
+}
+
+message GetNameRes {
+    string name = 1;
+}
+
+// 游客登录
+message ChatLoginReq {
+  	string name = 1;	// 用户名
+}
+
+message ChatLoginRes {
+}
+
+// 私聊信息
+message PrivateChatReq {
+	string name = 1;	// 用户名
+	string content = 2;	// 消息内容
+}
+
+message PrivateChatRes {
+	string content = 1;	// 消息内容
+}
+
+// 聊天消息推送内容
+message ChatPush {
+	string name = 1;	// 用户名
+	string content = 2;	// 消息内容
+}
+
+// 公共聊天信息
+message PublicChatReq {
+	string content = 1;	// 消息内容
+}
+
+message PublicChatRes {
+	string content = 1;	// 消息内容
+}
