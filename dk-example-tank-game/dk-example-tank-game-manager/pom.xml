@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dk-example-tank-game</artifactId>
+        <groupId>cn.laoshini.dk</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dk-example-tank-game-manager</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-example-tank-game-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- 数据库访问支持，只建议在示例项目和验证功能时使用，不建议在企业项目中应用 -->
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-basic-da</artifactId>
+            <version>${dangkang.version}</version>
+        </dependency>
+
+        <!-- 数据库实现的ID自增器 -->
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-db-id-incrementer</artifactId>
+            <version>${dangkang.version}</version>
+        </dependency>
+
+        <!-- 中文姓名生成器 -->
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-name-generator-cn</artifactId>
+            <version>${dangkang.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.13</version>
+        </dependency>
+
+        <!-- 配置中心客户端 -->
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-config-client</artifactId>
+            <version>${dangkang.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

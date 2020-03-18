@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dk-example-tank-game</artifactId>
+        <groupId>cn.laoshini.dk</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dk-example-tank-game-server</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-example-tank-game-hall</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-example-tank-game-room</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-autoconfigure</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>tiny-tank</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- 在jar包中增加依赖jar路径说明 -->
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <!-- 设置程序启动入口类 -->
+                            <mainClass>cn.laoshini.game.example.tank.TankGameServerMain</mainClass>
+                        </manifest>
+
+                        <manifestEntries>
+                            <!-- 用maven在MANIFEST.MF资料中的Class-Path中增加当前目录(.)和agent依赖的tools.jar -->
+                            <Class-Path>.</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

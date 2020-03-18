@@ -1,0 +1,46 @@
+<configuration scan="true">
+    <property name="filePattern"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS}||[%thread]||%-5level||%logger||%msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder charset="UTF-8">
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 按照每天生成日志文件 -->
+    <appender name="commonAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/common.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!--日志文件输出的文件名 -->
+            <FileNamePattern>logs/common.%d{yyyy-MM-dd}_%i.log</FileNamePattern>
+            <!--日志文件保留天数 -->
+            <maxHistory>90</maxHistory>
+            <!--日志文件最大的大小 -->
+            <maxFileSize>10MB</maxFileSize>
+            <!--所有该日志文件的总大小，超过该上限后，最旧的日志将被异步删除。maxHistory优先于该属性执行-->
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度， %logger{50}输出日志的类,50代表包名加类名的总长度限制，%msg：日志消息，%n是换行符 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <root level="DEBUG">
+        <appender-ref ref="commonAppender"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="cn.laoshini" level="DEBUG" additivity="false">
+        <appender-ref ref="commonAppender"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="DK_MESSAGE" level="DEBUG" additivity="false">
+        <appender-ref ref="commonAppender"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.springframework" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+</configuration>
