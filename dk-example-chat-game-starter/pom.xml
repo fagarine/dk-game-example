@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dk-game-example</artifactId>
+        <groupId>cn.laoshini.dk</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dk-example-chat-game-starter</artifactId>
+
+    <description>当康系统游戏示例——简单的聊天游戏，依靠配置项自动配置并启动游戏服</description>
+
+    <dependencies>
+        <!-- 通过配置项启动游戏服务的依赖项 -->
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-starter</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!-- 本项目直接使用dk-example-chat-game的游戏内容 -->
+        <dependency>
+            <groupId>cn.laoshini.dk</groupId>
+            <artifactId>dk-example-chat-game</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>cn.laoshini.dk</groupId>
+                    <artifactId>dk-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-all</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- 配置信息IDE辅助支持，非必须 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.2.0.RELEASE</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>

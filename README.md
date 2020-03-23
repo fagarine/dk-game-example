@@ -7,6 +7,7 @@
 ```text
 dk-game-example
 ├── dk-example-chat-game -- 简单的聊天游戏
+├── dk-example-chat-game-starter -- 简单的聊天游戏，通过配置项启动服务
 ├── dk-example-chat-protobuf -- 简单的聊天游戏Protobuf版，使用protobuf通信
 └── dk-example-tank-game -- 简单的坦克战斗小游戏
     ├── dk-example-tank-game-common
@@ -43,3 +44,10 @@ dk-game-example
 ### 项目链接
 - [github链接](https://github.com/fagarine/dk-game-example)
 - [码云链接](https://gitee.com/fagarine/dk-game-example)
+
+### 运行结果展示
+聊天游戏界面展示
+![chat-screen](https://s1.ax1x.com/2020/03/23/8T8uS1.png)
+
+坦克游戏界面展示
+![tank-screen](https://s1.ax1x.com/2020/03/23/8TYd61.jpg)

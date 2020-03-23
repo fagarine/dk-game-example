@@ -17,6 +17,7 @@
 
     <modules>
         <module>dk-example-chat-game</module>
+        <module>dk-example-chat-game-starter</module>
         <module>dk-example-chat-protobuf</module>
         <module>dk-example-tank-game</module>
     </modules>
@@ -52,6 +53,17 @@
     </build>
 
     <repositories>
+        <repository>
+            <id>dangkang-repo</id>
+            <url>https://gitee.com/fagarine/mvn-repo/raw/master/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
         <repository>
             <id>dangkang-repo</id>
             <url>https://raw.github.com/fagarine/mvn-repo/master/</url>
